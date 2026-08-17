@@ -14,7 +14,7 @@ public class HomeController {
     }
     @GetMapping("/welcome")
     public String getWelcomeMessage() {
-        return "Welcome to our Spring Boot App!";
+        return "Welcome to this session.!";
     }
 
     @GetMapping("/getmessage")
