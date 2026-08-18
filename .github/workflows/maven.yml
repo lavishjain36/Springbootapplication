@@ -41,3 +41,17 @@ jobs:
       with:
         name: springrender.jar
         path: target/*.jar
+deploy:
+     runs-on: ubuntu-latest
+     needs: build
+     if: github.event_name=='push' && github.ref=='refs/heads/main'
+
+     steps:
+       - name: Download jar
+       uses: actions/download-artifact@v4
+       with :
+         name: springrender.jar 
+         
+    - name: Deploy 
+      run: echo "Deploy application here"
+ 
