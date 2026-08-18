@@ -27,5 +27,18 @@ jobs:
         java-version: '21'
         distribution: 'temurin'
         cache: maven
+        
+    - name: Build and Test
+      run: mvn clean verify 
+      
+    - name: package Application 
+      run: mvn package -DskipTests
+      
+    - name: Upload Jar  
+      uses: actions/upload-artifact@v4 
+      with:
+          name: springrender.jar
+          path: target/*.jar
     - name: Build with Maven
       run: mvn -B package --file pom.xml
+      
