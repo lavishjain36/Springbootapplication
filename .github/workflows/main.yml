@@ -1,4 +1,4 @@
-name: Spring Boot CI
+name: Spring Boot CI/CD
 
 on:
   push:
@@ -6,6 +6,7 @@ on:
       - main
 
 jobs:
+
   build:
 
     runs-on: ubuntu-latest
@@ -20,10 +21,12 @@ jobs:
         with:
           java-version: '21'
           distribution: 'temurin'
-          cache: maven
 
       - name: Build application
         run: mvn clean package
 
       - name: Run tests
         run: mvn test
+
+      - name: Deploy application
+        run: echo "Deploying application..."
