@@ -39,7 +39,7 @@ jobs:
           path: target/*.jar
     - name: Build with Maven
       run: mvn -B package --file pom.xml
-
+      
   deploy:
     runs-on: ubuntu-latest
     needs: build
@@ -53,4 +53,5 @@ jobs:
           name: springrender.jar
 
       - name: Deploy
-        run: echo "Deploy application here"
+        run: echo "Deploy application"
+  
