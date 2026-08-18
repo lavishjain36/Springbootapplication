@@ -38,7 +38,7 @@ jobs:
     - name: Upload Jar
       uses: actions/upload-artifact@v4
       with:
-        name: springboot-app
+        name: springrender.jar
         path:  target/*.jar
 
   deploy:
